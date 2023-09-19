@@ -1,0 +1,10 @@
+const router = require("express").Router();
+const produitHandler = require('../handlers/produit.handler');
+router.post('/',produitHandler.addProduit);
+router.get('/',produitHandler.getProduits);
+router.get('/:id',produitHandler.getProduitById);
+router.get('/categorie/:idCategorie',produitHandler.getProduitByCategorie);
+router.get('/interval/price',produitHandler.getProduitsByPriceInterval);
+router.patch('/:id',produitHandler.updateProduit);
+router.delete('/:id',produitHandler.deleteProduit);
+module.exports = router;
